@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://btfijgmshcrxx"]
+
+[ext_resource type="PackedScene" uid="uid://cjkjtflmyh1ac" path="res://assets/codelitschi/models/boxes/box_01.glb" id="1_tmia5"]
+[ext_resource type="Script" uid="uid://c4m3vgcp7fcvx" path="res://modules/item/item.gd" id="2_8k8pp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tmia5"]
+friction = 0.7
+rough = true
+bounce = 0.15
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tmia5"]
+size = Vector3(0.2, 0.2, 0.4)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tmia5"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8k8pp"]
+font_size = 64
+font_color = Color(0, 0, 0, 0.203922)
+outline_size = 4
+outline_color = Color(0, 0, 0, 0.572549)
+shadow_size = 0
+shadow_offset = Vector2(0, 0)
+
+[node name="Box01" instance=ExtResource("1_tmia5")]
+collision_layer = 3
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_tmia5")
+gravity_scale = 0.5
+script = ExtResource("2_8k8pp")
+item_type = "box"
+
+[node name="Node" parent="." index="0"]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, -0.1)
+
+[node name="Item" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("BoxShape3D_tmia5")
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="2"]
+transform = Transform3D(-4.15258e-09, -0.095, -4.15258e-09, 0, -4.15258e-09, 0.095, -0.095, 4.15258e-09, 1.81515e-16, 0.0516475, 0.200312, -0.0746719)
+shaded = true
+double_sided = false
+texture = SubResource("ViewportTexture_tmia5")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" index="0"]
+transparent_bg = true
+size = Vector2i(200, 65)
+
+[node name="Label" type="Label" parent="Sprite3D/SubViewport" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "84529"
+label_settings = SubResource("LabelSettings_8k8pp")
+horizontal_alignment = 2
+vertical_alignment = 1

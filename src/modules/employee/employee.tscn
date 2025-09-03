@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp23ac0lihbo5"]
+
+[ext_resource type="Script" uid="uid://kmkjgpqjd64v" path="res://modules/employee/employee.gd" id="1_6vwum"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yju7v"]
+radius = 0.2
+height = 1.75
+
+[node name="Employee" type="CharacterBody3D" node_paths=PackedStringArray("interaction_raycast", "head", "hands")]
+script = ExtResource("1_6vwum")
+interaction_raycast = NodePath("Head/InteractionRayCast")
+head = NodePath("Head")
+hands = NodePath("Hands")
+
+[node name="Head" type="AudioListener3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+current = true
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+current = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Head/Camera3D"]
+omni_range = 1.0
+omni_attenuation = 0.2
+
+[node name="InteractionRayCast" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -1.8, 0)
+collision_mask = 2
+
+[node name="Player" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CapsuleShape3D_yju7v")
+
+[node name="Hands" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926971, -0.478744)

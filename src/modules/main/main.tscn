@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://2mtsdsapccbr"]
+
+[node name="Main" type="Node"]
+
+[node name="Game" type="Node" parent="."]
+
+[node name="ItemsContainer" type="Node3D" parent="Game"]
+unique_name_in_owner = true
