@@ -1,0 +1,4 @@
+key,en,de
+TUTORIAL,Tutorial,Tutorial
+TUT_TASK_MOVE,Move with {move_keys},Bewege dich mit {move_keys}
+TUT_TASK_TAKE_BOX,Pickup the box with {grab_key},Nehme das Packet mit {grab_key}

@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/image="uid://dy44gm0e8wjdp"
 config/icon="uid://dy44gm0e8wjdp"
 
+[autoload]
+
+Keys="*res://global/keys.gd"
+
 [display]
 
 window/size/viewport_width=3840
@@ -34,6 +38,11 @@ folder_colors={
 "res://modules/box/": "teal",
 "res://modules/box_spawner/": "teal",
 "res://modules/employee/": "teal",
+"res://modules/esc/": "teal",
+"res://modules/item/": "teal",
+"res://modules/level/": "teal",
+"res://modules/main/": "teal",
+"res://modules/ui/": "teal",
 "res://test/": "yellow"
 }
 
@@ -117,6 +126,10 @@ rotate_obj={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(382, 17),"global_position":Vector2(396, 87),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/lang/localization.de.translation", "res://assets/lang/localization.en.translation")
 
 [layer_names]
 

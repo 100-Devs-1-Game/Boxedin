@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvcdor4ehvi8w"]
+
+[ext_resource type="Script" uid="uid://b6im5uqym1oki" path="res://modules/ui/hud/hud.gd" id="1_eukk5"]
+[ext_resource type="Theme" uid="uid://bcoism666kk60" path="res://modules/ui/base_theme.tres" id="1_jp13n"]
+[ext_resource type="Script" uid="uid://d3wysbuc5pnjh" path="res://modules/ui/hud/task_panel.gd" id="2_6jedl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6jedl"]
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eukk5")
+
+[node name="Dot" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1916.0
+offset_top = 1076.0
+offset_right = -1916.0
+offset_bottom = -1076.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TaskPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -535.0
+offset_top = -123.0
+offset_right = -31.0
+offset_bottom = 124.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_jp13n")
+script = ExtResource("2_6jedl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TaskPanel"]
+layout_mode = 2
+
+[node name="TitleMargin" type="MarginContainer" parent="TaskPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+
+[node name="Title" type="Label" parent="TaskPanel/VBoxContainer/TitleMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "Tutorial"
+label_settings = SubResource("LabelSettings_6jedl")
+vertical_alignment = 1
+uppercase = true
+
+[node name="BgMargin" type="MarginContainer" parent="TaskPanel/VBoxContainer/TitleMargin/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -30
+
+[node name="TitleBackgroundColor" type="ColorRect" parent="TaskPanel/VBoxContainer/TitleMargin/Title/BgMargin"]
+z_index = -1
+layout_mode = 2
+
+[node name="Tasks" type="RichTextLabel" parent="TaskPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[ul]Test
+[font=res://addons/font/Jersey10-S.otf]test test[/font][/ul]"
+fit_content = true
+autowrap_mode = 0
