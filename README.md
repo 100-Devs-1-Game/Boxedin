@@ -27,3 +27,7 @@ Thanks goes to all these wonderful people :heart:
 ### Sound
 
 * 
+
+### Tanslations
+
+* KLIPNITY

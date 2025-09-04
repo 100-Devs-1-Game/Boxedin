@@ -135,7 +135,7 @@ debug_3={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://assets/lang/localization.de.translation", "res://assets/lang/localization.en.translation")
+locale/translations=PackedStringArray("res://assets/lang/localization.de.translation", "res://assets/lang/localization.en.translation", "res://assets/lang/localization.es.translation")
 
 [layer_names]
 

@@ -4,19 +4,21 @@ enum InputDevice {
 	KEYBOARD,
 	GAMEPAD
 }
-
+const langs := ["en","de","es"]
 var last_input_device: InputDevice = InputDevice.KEYBOARD
-
+var _lang_id := 0
 func _input(event):
 	if event is InputEventKey or event is InputEventMouse:
 		last_input_device = InputDevice.KEYBOARD
 	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
 		last_input_device = InputDevice.GAMEPAD
 	if Input.is_action_just_pressed("debug_3"):
-		if TranslationServer.get_locale() != "en":
-			TranslationServer.set_locale("en")
-		else:
-			TranslationServer.set_locale("de")
+		_lang_id += 1
+		if _lang_id >= langs.size():
+			_lang_id = 0
+		TranslationServer.set_locale(langs[_lang_id])
+		print("lang set to ",langs[_lang_id],_lang_id)
+
 		
 func get_action_key(action_name: StringName) -> String:
 	var last_device = last_input_device
