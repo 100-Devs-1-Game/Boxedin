@@ -1,17 +1,27 @@
 extends CharacterBody3D
-
+class_name Employee
 const JUMP_VELOCITY   := 3.0
 const WALKING_SPEED   := 1.5
 const SPRINTING_SPEED := 3.0
 const CROUCHING_SPEED := 0.5
 const CROUCHING_DEPTH := 0.8
 const MOUSE_SENS      := 0.15
+const STICK_SENS      := 0.05
 const HALF_PI         := PI/2
 @export var interaction_raycast: RayCast3D
 @export var head: Node3D
 @export var hands: Node3D
 var is_crouching := false
 var current_speed := 1.0
+var is_item_rotated := false:
+	set(value):
+		if value == is_item_rotated:
+			return
+		is_item_rotated = value
+		item_rotation_status_changed.emit(value)
+signal item_picked_up(item: Item)
+signal item_dropped(item: Item)
+signal item_rotation_status_changed(is_item_rotated: bool)
 @onready var items_container := $/root/Main/Game/ItemsContainer
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -22,14 +32,42 @@ func _input(event: InputEvent) -> void:
 		if Input.is_action_pressed("rotate_obj") && hands.get_child_count() >= 1:
 			var obj_in_hand = hands.get_child(0) as Item
 			obj_in_hand.target_rot = obj_in_hand.target_rot - Vector3(deg_to_rad(-mouse_event.relative.y * MOUSE_SENS),0,deg_to_rad(-mouse_event.relative.x * MOUSE_SENS))
+			is_item_rotated = true
 		else:
 			rotate_y(deg_to_rad(-mouse_event.relative.x * MOUSE_SENS))
 			head.rotate_x(deg_to_rad(-mouse_event.relative.y * MOUSE_SENS))
 			var c_rotation = Vector3(clamp(head.rotation.x,-HALF_PI,HALF_PI),head.rotation.y,head.rotation.z)
 			head.rotation = c_rotation
+	if event is InputEventJoypadButton:
+		var joy_event := event as InputEventJoypadButton
+		if Input.is_action_pressed("rotate_obj") && hands.get_child_count() >= 1:
+			is_item_rotated = true
 	if Input.is_action_just_released("rotate_obj") && hands.get_child_count() >= 1:
 		var obj_in_hand = hands.get_child(0) as Item
 		obj_in_hand.target_rot = Vector3.ZERO
+		is_item_rotated = false
+func _process(delta: float) -> void:
+	var joy_x := Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
+	var joy_y := Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
+
+	# Optional deadzone
+	if abs(joy_x) < 0.1: joy_x = 0.0
+	if abs(joy_y) < 0.1: joy_y = 0.0
+
+	if Input.is_action_pressed("rotate_obj") and hands.get_child_count() >= 1:
+		var obj_in_hand = hands.get_child(0) as Item
+		obj_in_hand.target_rot -= Vector3(
+			deg_to_rad(joy_y * STICK_SENS),
+			0,
+			deg_to_rad(-joy_x * STICK_SENS)
+		)
+		is_item_rotated = true
+	elif joy_x != 0.0 or joy_y != 0.0:
+		rotate_y(deg_to_rad(-joy_x * STICK_SENS))
+		head.rotate_x(deg_to_rad(-joy_y * STICK_SENS))
+		var clamped_rotation = Vector3(clamp(head.rotation.x, -HALF_PI, HALF_PI), head.rotation.y, head.rotation.z)
+		head.rotation = clamped_rotation
+		
 		
 func _physics_process(delta: float) -> void:
 #region Movement
@@ -66,6 +104,11 @@ func _physics_process(delta: float) -> void:
 	velocity = vel
 	move_and_slide()
 #endregion
+#region OutOfBoundsReset
+	if global_position.y < -50:
+		global_position = Vector3.ZERO
+		velocity = Vector3.ZERO
+#endregion
 #region Interact
 	if interaction_raycast.is_colliding() && hands.get_child_count() == 0:
 		var collider = interaction_raycast.get_collider() as Node3D
@@ -82,6 +125,7 @@ func _physics_process(delta: float) -> void:
 				item.collision = false
 				item.target_pos = Vector3.ZERO
 				item.target_rot = Vector3.ZERO
+				item_picked_up.emit(item)
 	else:
 		if hands.get_child_count() >= 1 && Input.is_action_just_pressed("grab"):
 			var item = hands.get_child(0)
@@ -95,4 +139,6 @@ func _physics_process(delta: float) -> void:
 			item.target_pos = null
 			item.target_rot = null
 			item.collision = true
+			is_item_rotated = false
+			item_dropped.emit(item)
 #endregion

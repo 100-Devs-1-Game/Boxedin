@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhehcyh3pvwcy"]
+[gd_scene load_steps=8 format=3 uid="uid://dhehcyh3pvwcy"]
 
 [ext_resource type="Script" uid="uid://otjqbusnts3v" path="res://modules/level/level_tutorial.gd" id="1_7rq0e"]
 [ext_resource type="PackedScene" uid="uid://dvcdor4ehvi8w" path="res://modules/ui/hud/hud.tscn" id="2_is5gb"]
 [ext_resource type="PackedScene" uid="uid://ba0mwtj67dw17" path="res://modules/esc/esc.tscn" id="3_g5p0s"]
 [ext_resource type="PackedScene" uid="uid://bp23ac0lihbo5" path="res://modules/employee/employee.tscn" id="4_87mv8"]
+[ext_resource type="PackedScene" uid="uid://dafqchdb8f6q2" path="res://modules/box_spawner/box_spawner.tscn" id="5_87mv8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2hum"]
+diffuse_mode = 3
+albedo_color = Color(0.178126, 0.137123, 0.0395196, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5p0s"]
+diffuse_mode = 3
+albedo_color = Color(0.933233, 0.826151, 0.589932, 1)
 
 [node name="LevelTutorial" type="Node"]
 script = ExtResource("1_7rq0e")
@@ -13,3 +22,56 @@ script = ExtResource("1_7rq0e")
 [node name="Esc" parent="." instance=ExtResource("3_g5p0s")]
 
 [node name="Employee" parent="." instance=ExtResource("4_87mv8")]
+unique_name_in_owner = true
+
+[node name="Map" type="Node" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+use_collision = true
+size = Vector3(30, 5, 40)
+material = SubResource("StandardMaterial3D_o2hum")
+
+[node name="Wall1" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 20)
+use_collision = true
+size = Vector3(30, 5, 1)
+material = SubResource("StandardMaterial3D_g5p0s")
+
+[node name="Wall2" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -20)
+use_collision = true
+size = Vector3(30, 5, 1)
+material = SubResource("StandardMaterial3D_g5p0s")
+
+[node name="Wall3" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.5, 0)
+use_collision = true
+size = Vector3(1, 5, 40)
+material = SubResource("StandardMaterial3D_g5p0s")
+
+[node name="Wall4" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.5, 0)
+use_collision = true
+size = Vector3(1, 5, 40)
+material = SubResource("StandardMaterial3D_g5p0s")
+
+[node name="BoxSpawner" parent="Map" instance=ExtResource("5_87mv8")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 4, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.69999, 0)
+light_energy = 5.0
+light_indirect_energy = 3.0
+shadow_enabled = true
+spot_range = 20.0
+spot_attenuation = 0.0
+spot_angle = 13.67
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Map"]
+transform = Transform3D(0.840567, 0.452764, -0.29741, 0, -0.549023, -0.835807, -0.541708, 0.702552, -0.46149, 80.5716, 49.1191, 0)
+light_energy = 0.5
+sky_mode = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
+transform = Transform3D(0.840935, -0.452405, 0.296914, 0, 0.548687, 0.836028, -0.541136, -0.703045, 0.46141, 80.5716, 49.1191, 0)

@@ -12,8 +12,13 @@ func _input(event):
 		last_input_device = InputDevice.KEYBOARD
 	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
 		last_input_device = InputDevice.GAMEPAD
+	if Input.is_action_just_pressed("debug_3"):
+		if TranslationServer.get_locale() != "en":
+			TranslationServer.set_locale("en")
+		else:
+			TranslationServer.set_locale("de")
 		
-func get_action_key(action_name: String) -> String:
+func get_action_key(action_name: StringName) -> String:
 	var last_device = last_input_device
 	var events = InputMap.action_get_events(action_name)
 	for event in events:
@@ -22,7 +27,7 @@ func get_action_key(action_name: String) -> String:
 				if event is InputEventKey:
 					return OS.get_keycode_string(event.physical_keycode)
 				elif event is InputEventMouse:
-					return event.as_text()
+					return get_mouse_button_name(event.button_mask)
 			InputDevice.GAMEPAD:
 				if event is InputEventJoypadButton:
 					return get_gamepad_button_name(event.button_index)
@@ -35,13 +40,21 @@ func get_gamepad_button_name(index: int) -> String:
 		JOY_BUTTON_B: return "B"
 		JOY_BUTTON_X: return "X"
 		JOY_BUTTON_Y: return "Y"
-		_: return "Button " + str(index)
+		JOY_BUTTON_RIGHT_SHOULDER: return tr("JOY_BUTTON_RIGHT_SHOULDER")
+		JOY_BUTTON_LEFT_SHOULDER: return tr("JOY_BUTTON_LEFT_SHOULDER")
+		_: return tr("BUTTON")+" " + str(index)
 func get_gamepad_axis_name(axis: int) -> String:
 	match axis:
-		JOY_AXIS_LEFT_X: return "Left Stick"
-		JOY_AXIS_LEFT_Y: return "Left Stick"
-		JOY_AXIS_RIGHT_X: return "Right Stick"
-		JOY_AXIS_RIGHT_Y: return "Right Stick"
-		JOY_AXIS_TRIGGER_LEFT: return "Left Trigger"
-		JOY_AXIS_TRIGGER_RIGHT: return "Right Trigger"
-		_: return "Axis " + str(axis)
+		JOY_AXIS_LEFT_X: return tr("JOY_AXIS_LEFT")
+		JOY_AXIS_LEFT_Y: return tr("JOY_AXIS_LEFT")
+		JOY_AXIS_RIGHT_X: return tr("JOY_AXIS_RIGHT")
+		JOY_AXIS_RIGHT_Y: return tr("JOY_AXIS_RIGHT")
+		JOY_AXIS_TRIGGER_LEFT: return tr("JOY_AXIS_TRIGGER_LEFT")
+		JOY_AXIS_TRIGGER_RIGHT: return tr("JOY_AXIS_TRIGGER_RIGHT")
+		_: return tr("AXIS")+" " + str(axis)
+func get_mouse_button_name(index: int) -> String:
+	match index:
+		MOUSE_BUTTON_LEFT: return tr("MOUSE_BUTTON_LEFT")
+		MOUSE_BUTTON_MIDDLE: return tr("MOUSE_BUTTON_MIDDLE")
+		MOUSE_BUTTON_RIGHT: return tr("MOUSE_BUTTON_RIGHT")
+		_: return tr("BUTTON")+" " + str(index)
