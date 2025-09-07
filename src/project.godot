@@ -42,6 +42,7 @@ folder_colors={
 "res://modules/item/": "teal",
 "res://modules/level/": "teal",
 "res://modules/main/": "teal",
+"res://modules/truck_door/": "teal",
 "res://modules/ui/": "teal",
 "res://test/": "yellow"
 }
@@ -135,7 +136,7 @@ debug_3={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://assets/lang/localization.de.translation", "res://assets/lang/localization.en.translation", "res://assets/lang/localization.es.translation")
+locale/translations=PackedStringArray("res://assets/lang/localization.de.translation", "res://assets/lang/localization.en.translation", "res://assets/lang/localization.es.translation", "res://assets/lang/localization.it.translation")
 
 [layer_names]
 

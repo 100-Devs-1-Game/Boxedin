@@ -10,7 +10,7 @@ func _replace_doors_with_animatable(node: Node, scene_root: Node) -> void:
 	for child in node.get_children():
 		_replace_doors_with_animatable(child, scene_root)
 
-	if node.name.begins_with("door"):
+	if node.name.begins_with("door") || node.name.ends_with("-anim"):
 		var anim_body := AnimatableBody3D.new()
 		anim_body.name = node.name
 		anim_body.transform = node.transform

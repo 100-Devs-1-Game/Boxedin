@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhehcyh3pvwcy"]
+[gd_scene load_steps=12 format=3 uid="uid://dhehcyh3pvwcy"]
 
 [ext_resource type="Script" uid="uid://otjqbusnts3v" path="res://modules/level/level_tutorial.gd" id="1_7rq0e"]
 [ext_resource type="PackedScene" uid="uid://dvcdor4ehvi8w" path="res://modules/ui/hud/hud.tscn" id="2_is5gb"]
 [ext_resource type="PackedScene" uid="uid://ba0mwtj67dw17" path="res://modules/esc/esc.tscn" id="3_g5p0s"]
 [ext_resource type="PackedScene" uid="uid://bp23ac0lihbo5" path="res://modules/employee/employee.tscn" id="4_87mv8"]
 [ext_resource type="PackedScene" uid="uid://dafqchdb8f6q2" path="res://modules/box_spawner/box_spawner.tscn" id="5_87mv8"]
+[ext_resource type="PackedScene" uid="uid://bgpxig4b2r64x" path="res://modules/truck_door/truck.tscn" id="6_o2hum"]
+[ext_resource type="PackedScene" uid="uid://crbngawdbw0we" path="res://modules/exit_door/exit_door.tscn" id="7_xm0ht"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2hum"]
 diffuse_mode = 3
@@ -13,6 +15,12 @@ albedo_color = Color(0.178126, 0.137123, 0.0395196, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5p0s"]
 diffuse_mode = 3
 albedo_color = Color(0.933233, 0.826151, 0.589932, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o2hum"]
+size = Vector3(2.10352, 2.94482, 3.09473)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xm0ht"]
+viewport_path = NodePath("Door/Interactable/UI/SubViewport")
 
 [node name="LevelTutorial" type="Node"]
 script = ExtResource("1_7rq0e")
@@ -23,6 +31,7 @@ script = ExtResource("1_7rq0e")
 
 [node name="Employee" parent="." instance=ExtResource("4_87mv8")]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.84361)
 
 [node name="Map" type="Node" parent="."]
 
@@ -39,9 +48,15 @@ size = Vector3(30, 5, 1)
 material = SubResource("StandardMaterial3D_g5p0s")
 
 [node name="Wall2" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2605, 1.5, -8.69798)
 use_collision = true
-size = Vector3(30, 5, 1)
+size = Vector3(13.479, 5, 1)
+material = SubResource("StandardMaterial3D_g5p0s")
+
+[node name="Wall5" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.27656, 1.5, -8.69798)
+use_collision = true
+size = Vector3(13.479, 5, 1)
 material = SubResource("StandardMaterial3D_g5p0s")
 
 [node name="Wall3" type="CSGBox3D" parent="Map"]
@@ -75,3 +90,37 @@ sky_mode = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
 transform = Transform3D(0.840935, -0.452405, 0.296914, 0, 0.548687, 0.836028, -0.541136, -0.703045, 0.46141, 80.5716, 49.1191, 0)
+
+[node name="truck" parent="." instance=ExtResource("6_o2hum")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0.0810229, -8.32273)
+
+[node name="TruckArea3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.9755)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TruckArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972412, 0)
+shape = SubResource("BoxShape3D_o2hum")
+debug_color = Color(0.940128, 9.91493e-06, 0.616364, 0.42)
+
+[node name="Door" parent="." instance=ExtResource("7_xm0ht")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, -7.00274, 0.05, -8.15195)
+
+[node name="UI" parent="Door/Interactable" index="1"]
+texture = SubResource("ViewportTexture_xm0ht")
+
+[connection signal="animation_finished" from="truck/TruckDoor/AnimationPlayer" to="." method="_on_animation_finished"]
+[connection signal="body_entered" from="TruckArea3D" to="." method="_on_truck_area_3d_body_entered"]
+[connection signal="body_exited" from="TruckArea3D" to="." method="_on_truck_area_3d_body_exited"]
+[connection signal="triggered" from="Door/Interactable" to="." method="_on_exit_triggered"]
+
+[editable path="truck"]
+[editable path="truck/TruckDoor"]
+[editable path="truck/TruckDoor/TruckDoorPanel"]
+[editable path="truck/TruckDoor/TruckDoorPanel2"]
+[editable path="truck/TruckDoor/TruckDoorPanel3"]
+[editable path="truck/TruckDoor/TruckDoorPanel4"]
+[editable path="truck/TruckDoor/TruckDoorPanel5"]
+[editable path="truck/TruckDoor/TruckDoorPanel6"]
+[editable path="Door"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://hyhpimll2l7g"]
+
+[ext_resource type="Script" uid="uid://dvoij2fmhw8vq" path="res://modules/ui/hud/interactable.gd" id="1_j71sv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cqofa"]
+size = Vector3(1.28931, 1.43933, 0.0566406)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_j71sv"]
+viewport_path = NodePath("UI/SubViewport")
+
+[node name="Interactable" type="StaticBody3D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_j71sv")
+type = "door"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.753773, 0)
+shape = SubResource("BoxShape3D_cqofa")
+
+[node name="UI" type="Sprite3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.4, 0)
+billboard = 1
+no_depth_test = true
+fixed_size = true
+texture_filter = 0
+render_priority = 2
+texture = SubResource("ViewportTexture_j71sv")
+
+[node name="SubViewport" type="SubViewport" parent="UI"]
+transparent_bg = true
+size = Vector2i(780, 120)
+
+[node name="Text" type="RichTextLabel" parent="UI/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 100
+text = "Open with E"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

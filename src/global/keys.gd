@@ -4,7 +4,7 @@ enum InputDevice {
 	KEYBOARD,
 	GAMEPAD
 }
-const langs := ["en","de","es"]
+const langs := ["en","de","es","it"]
 var last_input_device: InputDevice = InputDevice.KEYBOARD
 var _lang_id := 0
 func _input(event):

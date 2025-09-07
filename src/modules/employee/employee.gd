@@ -39,14 +39,14 @@ func _input(event: InputEvent) -> void:
 			var c_rotation = Vector3(clamp(head.rotation.x,-HALF_PI,HALF_PI),head.rotation.y,head.rotation.z)
 			head.rotation = c_rotation
 	if event is InputEventJoypadButton:
-		var joy_event := event as InputEventJoypadButton
 		if Input.is_action_pressed("rotate_obj") && hands.get_child_count() >= 1:
 			is_item_rotated = true
 	if Input.is_action_just_released("rotate_obj") && hands.get_child_count() >= 1:
 		var obj_in_hand = hands.get_child(0) as Item
 		obj_in_hand.target_rot = Vector3.ZERO
 		is_item_rotated = false
-func _process(delta: float) -> void:
+		
+func _process(_delta: float) -> void:
 	var joy_x := Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
 	var joy_y := Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
 
@@ -126,6 +126,12 @@ func _physics_process(delta: float) -> void:
 				item.target_pos = Vector3.ZERO
 				item.target_rot = Vector3.ZERO
 				item_picked_up.emit(item)
+		if collider is Interactable:
+			var interactable = collider
+			#interactable.show_ui_at(interaction_raycast.get_collision_point())
+			interactable.show_ui()
+			if Input.is_action_just_pressed("interact"):
+				interactable.trigger()
 	else:
 		if hands.get_child_count() >= 1 && Input.is_action_just_pressed("grab"):
 			var item = hands.get_child(0)

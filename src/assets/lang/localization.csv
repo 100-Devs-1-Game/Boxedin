@@ -1,23 +1,26 @@
-key,en,de,es
-TUTORIAL,Tutorial,Tutorial,Tutorial
-TUT_TASK_MOVE,Move with {move_keys},Bewege dich mit {move_keys},Muevete con {move_keys}
-TUT_TASK_TAKE_BOX,Pickup the box with {grab_key},Nimm die Kiste mit {grab_key},Recoje la caja con {grab_key}
-TUT_TASK_ROT_BOX,Rotate the box with {rotate_key},Drehe die Kiste mit {rotate_key},Gira la caja con {rotate_key}
-TUT_TASK_DROP_BOX,Carry the box into the truck and drop it using {grab_key},Trage die Kiste in den LKW und lege sie mit {grab_key} ab,Carga la caja al camión y suéltala usando {grab_key}
-TUT_TASK_CLOSE_TRUCK,Get out of the truck and close it using {interact_key},Verlasse den LKW und schließe ihn mit {interact_key},
-TUT_TASK_LEAVE,Leave the building,Verlasse das Gebäude,Sal del edificio
-TUT_INFO_FIRST_BOX,Looks like we've got our first box of the day!,"Sieht so aus, als hätten wir unsere erste Kiste des Tages!",Parece que tenemos nuestra primera caja del día!
-TUT_INFO_SORT,We need to sort everything and load it into the correct truck.,Wir müssen alles sortieren und in den richtigen LKW laden.,Necesitamos organizar todo y cargarlo en el camión correcto.
-TUT_INFO_GG,Absolutely phenomenal work! You crushed it!\n**thumbs up** **creepy smile lingers just a bit too long**,Absolut phänomenale Arbeit! Du hast es gerockt!\n**Daumen hoch** **grusliges Grinsen (hält etwas zu lange an)**,Trabajo fenomenal! Lo lograste!\n**thumbs up** **la sonrisa horripilante persiste demasiado tiempo**
-TUT_INFO_END,"Best employee yet. Let’s call this training done.\nSee you tomorrow for your first shift. It will be just as easy as today.\n**deadpan stare, unblinking**",Bester Mitarbeiter bisher. Lass uns das Training für beendet erklären.\nWir sehen uns morgen zu deiner ersten Schicht. Es wird genauso einfach wie heute.\n**leerer Blick**,"El mejor trabajador hasta ahora. Vamos a dejar el entrenamiento ahí.\nTe veo mañana en tu primer turno. Va a hacer fácil igual que hoy.\n**mirada inexpresiva, sin pestañear**"
-JOY_AXIS_LEFT,Left Stick,,Stick Izquierdo
-JOY_AXIS_RIGHT,Right Stick,,Stick Derecho
-AXIS,Axis,,Eje
-JOY_AXIS_TRIGGER_LEFT,Left Trigger,,Gatillo Izquierdo
-JOY_AXIS_TRIGGER_RIGHT,Right Trigger,,Gatillo Derecho
-BUTTON,Button,,Botón
-MOUSE_BUTTON_LEFT,Left Mouse Button,,Botón del Mouse Izquierdo
-MOUSE_BUTTON_MIDDLE,Middle Mouse Button,,Botón del Mouse Medio
-MOUSE_BUTTON_RIGHT,Right Mouse Button,,Botón del Mouse Derecho
-JOY_BUTTON_RIGHT_SHOULDER,Right Shoulder Button,,Botón del hombro Derecho
-JOY_BUTTON_LEFT_SHOULDER,Left Shoulder Button,,Botón del hombro Izquierdo
+key,en,de,es,it
+TUTORIAL,Tutorial,Tutorial,Tutorial,Tutorial
+TUT_TASK_MOVE,Move with {move_keys},Bewege dich mit {move_keys},Muevete con {move_keys},Muoviti con {move_keys}
+TUT_TASK_TAKE_BOX,Pickup the box with {grab_key},Nimm die Kiste mit {grab_key},Recoje la caja con {grab_key},Raccogli la scatola con {grab_key}
+TUT_TASK_ROT_BOX,Rotate the box with {rotate_key},Drehe die Kiste mit {rotate_key},Gira la caja con {rotate_key},Ruota la scatola con {rotate_keys}
+TUT_TASK_DROP_BOX,Carry the box into the truck and drop it using {grab_key},Trage die Kiste in den LKW und lege sie mit {grab_key} ab,Carga la caja al camión y suéltala usando {grab_key},Trasporta la scatola sul camion e lasciala con {grab_key}
+TUT_TASK_CLOSE_TRUCK,Get out of the truck and close it using {interact_key},Verlasse den LKW und schließe ihn mit {interact_key},Sal del camión y cierralo usando {interact_key},Esci dal camion e chiudilo con {interact_key}
+TUT_TASK_LEAVE,Leave the building,Verlasse das Gebäude,Sal del edificio,Lascia l'edificio
+TUT_INFO_FIRST_BOX,Looks like we've got our first box of the day!,"Sieht so aus, als hätten wir unsere erste Kiste des Tages!",Parece que tenemos nuestra primera caja del día!,Sembra che abbiamo ricevuto la prima scatola del giorno!
+TUT_INFO_SORT,We need to sort everything and load it into the correct truck.,Wir müssen alles sortieren und in den richtigen LKW laden.,Necesitamos organizar todo y cargarlo en el camión correcto.,Dobbiamo sistemare tutto e caricarlo sul camion corretto
+TUT_INFO_GG,Absolutely phenomenal work! You crushed it!\n**thumbs up** **creepy smile lingers just a bit too long**,Absolut phänomenale Arbeit! Du hast es gerockt!\n**Daumen hoch** **grusliges Grinsen (hält etwas zu lange an)**,Trabajo fenomenal! Lo lograste!\n**thumbs up** **la sonrisa horripilante persiste demasiado tiempo**,Un lavoro assolutamente fenomenale! Hai fatto centro! **Pollice in su** **Il sorriso dura un pò troppo a lungo: un pò inquietante**
+TUT_INFO_END,"Best employee yet. Let’s call this training done.\nSee you tomorrow for your first shift. It will be just as easy as today.\n**deadpan stare, unblinking**",Bester Mitarbeiter bisher. Lass uns das Training für beendet erklären.\nWir sehen uns morgen zu deiner ersten Schicht. Es wird genauso einfach wie heute.\n**leerer Blick**,"El mejor trabajador hasta ahora. Vamos a dejar el entrenamiento ahí.\nTe veo mañana en tu primer turno. Va a hacer fácil igual que hoy.\n**mirada inexpresiva, sin pestañear**","Il miglior dipendente della storia! Direi che la tua formazione è completata. Ci vediamo domani per il tuo primo turno.sarà facile come oggi. **Sguardo impassibile, senza batter ciglio""."
+JOY_AXIS_LEFT,Left Stick,,Stick Izquierdo,Levetta sinistra
+JOY_AXIS_RIGHT,Right Stick,,Stick Derecho,Levetta destra
+AXIS,Axis,,Eje,Asse
+JOY_AXIS_TRIGGER_LEFT,Left Trigger,,Gatillo Izquierdo,Grilletto sinistro
+JOY_AXIS_TRIGGER_RIGHT,Right Trigger,,Gatillo Derecho,Grilletto destro
+BUTTON,Button,,Botón,Tasto
+MOUSE_BUTTON_LEFT,Left Mouse Button,,Botón del Mouse Izquierdo,Tasto sinistro del mouse
+MOUSE_BUTTON_MIDDLE,Middle Mouse Button,,Botón del Mouse Medio,Tasto centrale del mouse
+MOUSE_BUTTON_RIGHT,Right Mouse Button,,Botón del Mouse Derecho,Tasto destro del mouse {interact_key}
+JOY_BUTTON_RIGHT_SHOULDER,Right Shoulder Button,,Botón del hombro Derecho,Tasto laterale destro {interact_key}
+JOY_BUTTON_LEFT_SHOULDER,Left Shoulder Button,,Botón del hombro Izquierdo,Tasto laterale sinistro {interact_key}
+OPEN_WITH,open with {interact_key},Öffnen mit {interact_key},,
+CLOSE_WITH,close with {interact_key},Schließen mit {interact_key},,
+LEAVE_WITH,leave with {interact_key},Verlassen mit {interact_key},,

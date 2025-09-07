@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8eongrirws7k"]
+
+[ext_resource type="PackedScene" uid="uid://b1b40cdmbmq7k" path="res://assets/codelitschi/models/truck_panel/truck_door_panel.glb" id="1_5eaqs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j51mv"]
+size = Vector3(1.24902, 0.269081, 0.0136719)
+
+[node name="TruckDoorPanel" instance=ExtResource("1_5eaqs")]
+
+[node name="panel-anim" parent="Node/root" index="0"]
+collision_mask = 0
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/root/panel-anim" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128117, 0)
+shape = SubResource("BoxShape3D_j51mv")

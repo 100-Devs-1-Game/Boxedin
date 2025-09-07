@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhcqbxt0yugco"]
+[gd_scene load_steps=6 format=3 uid="uid://bhcqbxt0yugco"]
 
 [ext_resource type="PackedScene" uid="uid://dafqchdb8f6q2" path="res://modules/box_spawner/box_spawner.tscn" id="1_1wkxm"]
-[ext_resource type="PackedScene" uid="uid://btfijgmshcrxx" path="res://modules/box/box_01.tscn" id="2_nvxdj"]
 [ext_resource type="PackedScene" uid="uid://ba0mwtj67dw17" path="res://modules/esc/esc.tscn" id="3_kkqc0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvxdj"]
@@ -25,7 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 0.957953, -0.286926, 0, 0.286926, 0.957953, 
 
 [node name="BoxSpawner" parent="Game" instance=ExtResource("1_1wkxm")]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0.0710157, 3.96881, 2.3476)
-boxes = Array[PackedScene]([ExtResource("2_nvxdj")])
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Game"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.43177, 0)

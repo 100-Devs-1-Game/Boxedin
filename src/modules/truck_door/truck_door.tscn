@@ -1,0 +1,205 @@
+[gd_scene load_steps=6 format=3 uid="uid://qb5ki6tccyml"]
+
+[ext_resource type="PackedScene" uid="uid://c8eongrirws7k" path="res://modules/truck_door/panel/truck_door_panel.tscn" id="1_cqofa"]
+[ext_resource type="Animation" uid="uid://7l8bxw64v48r" path="res://modules/truck_door/open.anim" id="2_hc8fa"]
+[ext_resource type="PackedScene" uid="uid://hyhpimll2l7g" path="res://modules/ui/hud/interactable.tscn" id="2_mheci"]
+
+[sub_resource type="Animation" id="Animation_mheci"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TruckDoorPanel/Node/root/panel-anim:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TruckDoorPanel2/Node/root/panel-anim:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TruckDoorPanel3/Node/root/panel-anim:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TruckDoorPanel4/Node/root/panel-anim:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TruckDoorPanel5/Node/root/panel-anim:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TruckDoorPanel5/Node/root/panel-anim:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TruckDoorPanel4/Node/root/panel-anim:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TruckDoorPanel3/Node/root/panel-anim:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TruckDoorPanel2/Node/root/panel-anim:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TruckDoorPanel/Node/root/panel-anim:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TruckDoorPanel6/Node/root/panel-anim:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TruckDoorPanel6/Node/root/panel-anim:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hc8fa"]
+_data = {
+&"RESET": SubResource("Animation_mheci"),
+&"open_truck": ExtResource("2_hc8fa")
+}
+
+[node name="TruckDoor" type="Node3D"]
+
+[node name="TruckDoorPanel" parent="." instance=ExtResource("1_cqofa")]
+
+[node name="TruckDoorPanel2" parent="." instance=ExtResource("1_cqofa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262, 0)
+
+[node name="TruckDoorPanel3" parent="." instance=ExtResource("1_cqofa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.524, 0)
+
+[node name="TruckDoorPanel4" parent="." instance=ExtResource("1_cqofa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.786, 0)
+
+[node name="cuboid" parent="TruckDoorPanel4/Node/root/panel-anim" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00210032, 0)
+
+[node name="TruckDoorPanel5" parent="." instance=ExtResource("1_cqofa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.048, 0)
+
+[node name="cuboid" parent="TruckDoorPanel5/Node/root/panel-anim" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, 0.00282967, 0)
+
+[node name="TruckDoorPanel6" parent="." instance=ExtResource("1_cqofa")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 1.31, 0)
+
+[node name="panel-anim" parent="TruckDoorPanel6/Node/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="cuboid" parent="TruckDoorPanel6/Node/root/panel-anim" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, 0.00282967, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hc8fa")
+}
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("animation_player") instance=ExtResource("2_mheci")]
+animation_player = NodePath("../AnimationPlayer")
+animation = &"open_truck"
+
+[editable path="TruckDoorPanel"]
+[editable path="TruckDoorPanel2"]
+[editable path="TruckDoorPanel3"]
+[editable path="TruckDoorPanel4"]
+[editable path="TruckDoorPanel5"]
+[editable path="TruckDoorPanel6"]
