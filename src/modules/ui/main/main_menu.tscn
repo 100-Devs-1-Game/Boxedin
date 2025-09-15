@@ -1,0 +1,465 @@
+[gd_scene load_steps=30 format=3 uid="uid://clfwe68ugtody"]
+
+[ext_resource type="Script" uid="uid://bpanq5vtysil1" path="res://modules/ui/main/main_menu.gd" id="1_2v7uk"]
+[ext_resource type="Texture2D" uid="uid://b8eljqw0bfe6g" path="res://addons/ai/placeholderMainMenu.jpeg" id="1_3tp72"]
+[ext_resource type="Texture2D" uid="uid://dk66t6qd806dl" path="res://addons/qr_code/discord.png" id="2_1vwfd"]
+[ext_resource type="Script" uid="uid://b5b26h80gy8x7" path="res://modules/ui/main/random_lable.gd" id="3_7s3ww"]
+[ext_resource type="PackedScene" uid="uid://cjabvhwu3m3he" path="res://modules/ui/main/main_menu_button.tscn" id="4_1vwfd"]
+[ext_resource type="Shader" uid="uid://can0mwfr28r37" path="res://modules/ui/main/button_marker.gdshader" id="5_7s3ww"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2v7uk"]
+bg_color = Color(0.341176, 0.294118, 0.231373, 1)
+border_width_top = 100
+border_width_right = 100
+border_width_bottom = 100
+border_color = Color(0.4, 0.345098, 0.282353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4x20"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhx8m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf6g8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_right = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bap43"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ukq8h"]
+font_size = 261
+font_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bap43"]
+shader = ExtResource("5_7s3ww")
+shader_parameter/reveal_amount = 0.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1vwfd"]
+load_path = "res://.godot/imported/pen.png-173b32f64469a5095a2087074ddc1b89.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2v7uk"]
+shader = ExtResource("5_7s3ww")
+shader_parameter/reveal_amount = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7s3ww"]
+shader = ExtResource("5_7s3ww")
+shader_parameter/reveal_amount = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h4x20"]
+shader = ExtResource("5_7s3ww")
+shader_parameter/reveal_amount = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yhx8m"]
+shader = ExtResource("5_7s3ww")
+shader_parameter/reveal_amount = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wf6g8"]
+shader = ExtResource("5_7s3ww")
+shader_parameter/reveal_amount = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_828ly"]
+font_size = 81
+font_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukq8h"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_828ly"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_bljrl"]
+font_size = 255
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0icr6"]
+grow_begin = -10.0
+grow_end = -10.0
+thickness = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_2v7uk"]
+font_size = 105
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4x20"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yhx8m"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bo2c5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qvu1x"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2v7uk")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3tp72")
+
+[node name="Box" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1602.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2v7uk")
+
+[node name="Paper" type="Panel" parent="Box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -862.0
+offset_right = 600.0
+offset_bottom = 862.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h4x20")
+
+[node name="Label" type="Panel" parent="Box/Paper"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yhx8m")
+
+[node name="VBox" type="VBoxContainer" parent="Box/Paper/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -10
+
+[node name="Top" type="PanelContainer" parent="Box/Paper/Label/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yhx8m")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Box/Paper/Label/VBox/Top"]
+layout_mode = 2
+theme_override_constants/separation = -10
+
+[node name="QRCode" type="PanelContainer" parent="Box/Paper/Label/VBox/Top/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wf6g8")
+
+[node name="TextureRect" type="TextureRect" parent="Box/Paper/Label/VBox/Top/HBoxContainer/QRCode"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+texture = ExtResource("2_1vwfd")
+
+[node name="Address" type="PanelContainer" parent="Box/Paper/Label/VBox/Top/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bap43")
+
+[node name="RandomLable" type="RichTextLabel" parent="Box/Paper/Label/VBox/Top/HBoxContainer/Address"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=60][color=black]Patrick Star
+[i]Under the Rock, 126 Conch Street[/i]
+Bikini Bottom, Pacific Ocean"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_7s3ww")
+random_text = Array[String](["SpongeBob SquarePants
+[i]124 Conch Street[/i]
+Bikini Bottom, Pacific Ocean", "Patrick Star
+[i]Under the Rock, 126 Conch Street[/i]
+Bikini Bottom, Pacific Ocean", "Squidward Tentacles
+[i]122 Conch Street[/i]
+Bikini Bottom, Pacific Ocean", "Sandy Cheeks
+[i]1 Treedome Circle[/i]
+Bikini Bottom, TX District", "Mr. Krabs
+[i]1 Krusty Krab Way, Claw District[/i]
+Bikini Bottom, Pacific Ocean", "Plankton & Karen
+[i]666 Chum Bucket Lane[/i]
+Bikini Bottom, Industrial Sector", "Larry the Lobster
+[i]88 Muscle Beach Blvd[/i]
+Bikini Bottom, Flex Zone", "Mrs. Puff
+[i]7 Pufferfish Drive[/i]
+Bikini Bottom, Boating School District", "Mermaid Man & Barnacle Boy
+[i]Shady Shoals Rest Home, Room 3B[/i]
+Bikini Bottom, Retirement Reef"])
+
+[node name="Title" type="PanelContainer" parent="Box/Paper/Label/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yhx8m")
+
+[node name="Label" type="Label" parent="Box/Paper/Label/VBox/Title"]
+layout_mode = 2
+text = "Boxed In!"
+label_settings = SubResource("LabelSettings_ukq8h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Center" type="PanelContainer" parent="Box/Paper/Label/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_yhx8m")
+
+[node name="VBox" type="VBoxContainer" parent="Box/Paper/Label/VBox/Center"]
+layout_mode = 2
+alignment = 1
+
+[node name="Continue" parent="Box/Paper/Label/VBox/Center/VBox" instance=ExtResource("4_1vwfd")]
+visible = false
+layout_mode = 2
+text = "BACK_TO_GAME"
+
+[node name="Marker" parent="Box/Paper/Label/VBox/Center/VBox/Continue" index="0"]
+material = SubResource("ShaderMaterial_bap43")
+texture = SubResource("CompressedTexture2D_1vwfd")
+
+[node name="PlayTutorial" parent="Box/Paper/Label/VBox/Center/VBox" instance=ExtResource("4_1vwfd")]
+layout_mode = 2
+text = "PLAY_TUTORIAL"
+
+[node name="Marker" parent="Box/Paper/Label/VBox/Center/VBox/PlayTutorial" index="0"]
+material = SubResource("ShaderMaterial_2v7uk")
+texture = SubResource("CompressedTexture2D_1vwfd")
+
+[node name="Play" parent="Box/Paper/Label/VBox/Center/VBox" instance=ExtResource("4_1vwfd")]
+layout_mode = 2
+text = "START_NEW_GAME"
+
+[node name="Marker" parent="Box/Paper/Label/VBox/Center/VBox/Play" index="0"]
+material = SubResource("ShaderMaterial_7s3ww")
+
+[node name="Settings" parent="Box/Paper/Label/VBox/Center/VBox" instance=ExtResource("4_1vwfd")]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="Marker" parent="Box/Paper/Label/VBox/Center/VBox/Settings" index="0"]
+material = SubResource("ShaderMaterial_h4x20")
+
+[node name="Credits" parent="Box/Paper/Label/VBox/Center/VBox" instance=ExtResource("4_1vwfd")]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="Marker" parent="Box/Paper/Label/VBox/Center/VBox/Credits" index="0"]
+material = SubResource("ShaderMaterial_yhx8m")
+
+[node name="Exit" parent="Box/Paper/Label/VBox/Center/VBox" instance=ExtResource("4_1vwfd")]
+layout_mode = 2
+text = "QUIT_GAME"
+
+[node name="Marker" parent="Box/Paper/Label/VBox/Center/VBox/Exit" index="0"]
+material = SubResource("ShaderMaterial_wf6g8")
+
+[node name="1G100D4" type="PanelContainer" parent="Box/Paper/Label/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yhx8m")
+
+[node name="Label" type="Label" parent="Box/Paper/Label/VBox/1G100D4"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+text = "1 Game 100 Developer #000000003"
+label_settings = SubResource("LabelSettings_828ly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1527.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukq8h")
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="Settings/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_828ly")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_bljrl")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Settings/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxLine_0icr6")
+
+[node name="Sound" type="Label" parent="Settings/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "SOUND"
+label_settings = SubResource("LabelSettings_2v7uk")
+
+[node name="MasterContainer" type="HBoxContainer" parent="Settings/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Settings/MarginContainer/PanelContainer/VBoxContainer/MasterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+theme_override_styles/separator = SubResource("StyleBoxEmpty_h4x20")
+
+[node name="Label2" type="Label" parent="Settings/MarginContainer/PanelContainer/VBoxContainer/MasterContainer"]
+layout_mode = 2
+text = "SOUND_MASTER"
+label_settings = SubResource("LabelSettings_yhx8m")
+
+[node name="HSlider" type="HSlider" parent="Settings/MarginContainer/PanelContainer/VBoxContainer/MasterContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 1.0
+step = 0.01
+value = 1.0
+exp_edit = true
+scrollable = false
+
+[node name="MusicContainer" type="HBoxContainer" parent="Settings/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Settings/MarginContainer/PanelContainer/VBoxContainer/MusicContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+theme_override_styles/separator = SubResource("StyleBoxEmpty_h4x20")
+
+[node name="Label2" type="Label" parent="Settings/MarginContainer/PanelContainer/VBoxContainer/MusicContainer"]
+layout_mode = 2
+text = "SOUND_MUSIC"
+label_settings = SubResource("LabelSettings_yhx8m")
+
+[node name="HSlider" type="HSlider" parent="Settings/MarginContainer/PanelContainer/VBoxContainer/MusicContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 1.0
+step = 0.01
+value = 1.0
+exp_edit = true
+scrollable = false
+
+[node name="SFXContainer" type="HBoxContainer" parent="Settings/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Settings/MarginContainer/PanelContainer/VBoxContainer/SFXContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+theme_override_styles/separator = SubResource("StyleBoxEmpty_h4x20")
+
+[node name="Label2" type="Label" parent="Settings/MarginContainer/PanelContainer/VBoxContainer/SFXContainer"]
+layout_mode = 2
+text = "SOUND_SFX"
+label_settings = SubResource("LabelSettings_yhx8m")
+
+[node name="HSlider" type="HSlider" parent="Settings/MarginContainer/PanelContainer/VBoxContainer/SFXContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 1.0
+step = 0.01
+value = 1.0
+exp_edit = true
+scrollable = false
+
+[node name="HSeparator3" type="HSeparator" parent="Settings/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bo2c5")
+
+[node name="HSeparator2" type="HSeparator" parent="Settings/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxLine_0icr6")
+
+[node name="HSeparator4" type="HSeparator" parent="Settings/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qvu1x")
+
+[node name="Credits" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1527.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukq8h")
+
+[connection signal="pressed" from="Box/Paper/Label/VBox/Center/VBox/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Box/Paper/Label/VBox/Center/VBox/PlayTutorial" to="." method="_on_play_tutorial_pressed"]
+[connection signal="pressed" from="Box/Paper/Label/VBox/Center/VBox/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Box/Paper/Label/VBox/Center/VBox/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Box/Paper/Label/VBox/Center/VBox/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Box/Paper/Label/VBox/Center/VBox/Exit" to="." method="_on_exit_pressed"]
+
+[editable path="Box/Paper/Label/VBox/Center/VBox/Continue"]
+[editable path="Box/Paper/Label/VBox/Center/VBox/PlayTutorial"]
+[editable path="Box/Paper/Label/VBox/Center/VBox/Play"]
+[editable path="Box/Paper/Label/VBox/Center/VBox/Settings"]
+[editable path="Box/Paper/Label/VBox/Center/VBox/Credits"]
+[editable path="Box/Paper/Label/VBox/Center/VBox/Exit"]

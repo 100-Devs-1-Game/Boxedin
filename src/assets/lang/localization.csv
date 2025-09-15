@@ -21,6 +21,12 @@ MOUSE_BUTTON_MIDDLE,Middle Mouse Button,,Botón del Mouse Medio,Tasto centrale d
 MOUSE_BUTTON_RIGHT,Right Mouse Button,,Botón del Mouse Derecho,Tasto destro del mouse {interact_key}
 JOY_BUTTON_RIGHT_SHOULDER,Right Shoulder Button,,Botón del hombro Derecho,Tasto laterale destro {interact_key}
 JOY_BUTTON_LEFT_SHOULDER,Left Shoulder Button,,Botón del hombro Izquierdo,Tasto laterale sinistro {interact_key}
-OPEN_WITH,open with {interact_key},Öffnen mit {interact_key},,
-CLOSE_WITH,close with {interact_key},Schließen mit {interact_key},,
-LEAVE_WITH,leave with {interact_key},Verlassen mit {interact_key},,
+OPEN_WITH,open with {interact_key},Öffnen mit {interact_key},,Apri con {interact_key}
+CLOSE_WITH,close with {interact_key},Schließen mit {interact_key},,Chiudi con {interact_key}
+LEAVE_WITH,leave with {interact_key},Verlassen mit {interact_key},,Lascia con {interact_key}
+PLAY_TUTORIAL,Play Tutorial,Tutorial Starten,,
+START_NEW_GAME,Start New Game,Neues Spiel Starten,,
+SETTINGS,Settings,Einstellungen,,
+CREDITS,Credits,Credits,,
+QUIT_GAME,Quit Game,Spiel Beenden,,
+BACK_TO_GAME,Continue,Weiter,,

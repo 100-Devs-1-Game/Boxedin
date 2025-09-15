@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhehcyh3pvwcy"]
+[gd_scene load_steps=11 format=3 uid="uid://dhehcyh3pvwcy"]
 
 [ext_resource type="Script" uid="uid://otjqbusnts3v" path="res://modules/level/level_tutorial.gd" id="1_7rq0e"]
 [ext_resource type="PackedScene" uid="uid://dvcdor4ehvi8w" path="res://modules/ui/hud/hud.tscn" id="2_is5gb"]
-[ext_resource type="PackedScene" uid="uid://ba0mwtj67dw17" path="res://modules/esc/esc.tscn" id="3_g5p0s"]
 [ext_resource type="PackedScene" uid="uid://bp23ac0lihbo5" path="res://modules/employee/employee.tscn" id="4_87mv8"]
 [ext_resource type="PackedScene" uid="uid://dafqchdb8f6q2" path="res://modules/box_spawner/box_spawner.tscn" id="5_87mv8"]
 [ext_resource type="PackedScene" uid="uid://bgpxig4b2r64x" path="res://modules/truck_door/truck.tscn" id="6_o2hum"]
@@ -26,8 +25,6 @@ viewport_path = NodePath("Door/Interactable/UI/SubViewport")
 script = ExtResource("1_7rq0e")
 
 [node name="Hud" parent="." instance=ExtResource("2_is5gb")]
-
-[node name="Esc" parent="." instance=ExtResource("3_g5p0s")]
 
 [node name="Employee" parent="." instance=ExtResource("4_87mv8")]
 unique_name_in_owner = true

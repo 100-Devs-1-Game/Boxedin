@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjabvhwu3m3he"]
+
+[ext_resource type="Script" uid="uid://c1ksypc0j67nq" path="res://modules/ui/main/main_menu_button.gd" id="1_f2k75"]
+[ext_resource type="Shader" uid="uid://can0mwfr28r37" path="res://modules/ui/main/button_marker.gdshader" id="2_ml4ne"]
+[ext_resource type="Texture2D" uid="uid://c66upli7lhln3" path="res://assets/codelitschi/images/pen.png" id="3_5fusw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7s3ww"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tp72"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_828ly"]
+shader = ExtResource("2_ml4ne")
+shader_parameter/reveal_amount = 0.0
+
+[sub_resource type="Animation" id="Animation_h4x20"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker:material:shader_parameter/reveal_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2v7uk"]
+resource_name = "main_button_reveal"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker:material:shader_parameter/reveal_amount")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yhx8m"]
+_data = {
+&"RESET": SubResource("Animation_h4x20"),
+&"main_button_reveal": SubResource("Animation_2v7uk")
+}
+
+[node name="MainMenuButton" type="Button"]
+theme_override_colors/font_disabled_color = Color(0.389287, 0.389287, 0.389287, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_7s3ww")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3tp72")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7s3ww")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7s3ww")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7s3ww")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7s3ww")
+text = "Start New Game"
+script = ExtResource("1_f2k75")
+
+[node name="Marker" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_828ly")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5fusw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yhx8m")
+}

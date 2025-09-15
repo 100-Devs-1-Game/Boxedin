@@ -1,16 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://2mtsdsapccbr"]
+[gd_scene load_steps=5 format=3 uid="uid://2mtsdsapccbr"]
 
 [ext_resource type="Script" uid="uid://diyk6jtv6i3l0" path="res://modules/main/main.gd" id="1_374gq"]
+[ext_resource type="PackedScene" uid="uid://clfwe68ugtody" path="res://modules/ui/main/main_menu.tscn" id="2_dm0cy"]
 [ext_resource type="PackedScene" uid="uid://dhehcyh3pvwcy" path="res://modules/level/level_tutorial.tscn" id="2_qtwxo"]
+[ext_resource type="PackedScene" uid="uid://ba0mwtj67dw17" path="res://modules/esc/esc.tscn" id="3_qknb0"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_374gq")
+level_tutorial = ExtResource("2_qtwxo")
 
 [node name="Game" type="Node" parent="."]
+process_mode = 1
 
 [node name="ItemsContainer" type="Node3D" parent="Game"]
 unique_name_in_owner = true
 
 [node name="CurrentLevel" type="Node" parent="Game"]
+unique_name_in_owner = true
 
-[node name="LevelTutorial" parent="Game/CurrentLevel" instance=ExtResource("2_qtwxo")]
+[node name="MainMenu" parent="." node_paths=PackedStringArray("manager") instance=ExtResource("2_dm0cy")]
+unique_name_in_owner = true
+process_mode = 3
+manager = NodePath("..")
+
+[node name="Esc" parent="." instance=ExtResource("3_qknb0")]
+process_mode = 3
