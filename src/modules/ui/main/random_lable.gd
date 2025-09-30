@@ -5,3 +5,7 @@ extends RichTextLabel
 
 func _ready() -> void:
 	self.text = "[font_size={size}][color={color}]{text}".format({"size": text_size, "color": text_color, "text":  random_text.pick_random()})
+
+
+func _on_visibility_changed() -> void:
+	self.text = "[font_size={size}][color={color}]{text}".format({"size": text_size, "color": text_color, "text":  random_text.pick_random()})

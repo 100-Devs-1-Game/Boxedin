@@ -14,6 +14,8 @@ func start_level(level_name: String)-> void:
 				old_level.queue_free()
 			%MainMenu.IN_GAME_MODE = false
 			%MainMenu.show()
+			%MainMenu.get_node("Settings").hide()
+			%MainMenu.get_node("Credits").hide()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		"tutorial":
 			var new_level = level_tutorial.instantiate()

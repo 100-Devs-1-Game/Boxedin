@@ -2,23 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dee262x6welo6"
-path="res://.godot/imported/door_0.png-cde797dd5120e92753716925b17c4ff9.ctex"
+uid="uid://cvdxxcgdc3wjv"
+path="res://.godot/imported/gate_0.png-edcee6b52df33126dfd99cee4da8dd5d.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "a379e15f6aed78126a281e561223f456"
+"md5": "c0700423afa6fb1cadc5960e64fcba90"
 }
 
 [deps]
 
-source_file="res://assets/codelitschi/models/door/door_0.png"
-dest_files=["res://.godot/imported/door_0.png-cde797dd5120e92753716925b17c4ff9.ctex"]
+source_file="res://assets/codelitschi/models/gate/gate_0.png"
+dest_files=["res://.godot/imported/gate_0.png-edcee6b52df33126dfd99cee4da8dd5d.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

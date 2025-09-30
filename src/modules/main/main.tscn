@@ -1,13 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://2mtsdsapccbr"]
+[gd_scene load_steps=8 format=3 uid="uid://2mtsdsapccbr"]
 
 [ext_resource type="Script" uid="uid://diyk6jtv6i3l0" path="res://modules/main/main.gd" id="1_374gq"]
 [ext_resource type="PackedScene" uid="uid://clfwe68ugtody" path="res://modules/ui/main/main_menu.tscn" id="2_dm0cy"]
 [ext_resource type="PackedScene" uid="uid://dhehcyh3pvwcy" path="res://modules/level/level_tutorial.tscn" id="2_qtwxo"]
 [ext_resource type="PackedScene" uid="uid://ba0mwtj67dw17" path="res://modules/esc/esc.tscn" id="3_qknb0"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qknb0"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_2eocd"]
+sky_material = SubResource("ProceduralSkyMaterial_qknb0")
+
+[sub_resource type="Environment" id="Environment_3arm8"]
+background_mode = 1
+sky = SubResource("Sky_2eocd")
+ambient_light_source = 2
+ambient_light_color = Color(0.523781, 0.523781, 0.523781, 1)
+tonemap_mode = 4
+tonemap_white = 1.31
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.025
+volumetric_fog_sky_affect = 0.0
+
 [node name="Main" type="Node"]
 script = ExtResource("1_374gq")
 level_tutorial = ExtResource("2_qtwxo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3arm8")
 
 [node name="Game" type="Node" parent="."]
 process_mode = 1

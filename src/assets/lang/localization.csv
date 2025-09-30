@@ -1,32 +1,32 @@
-key,en,de,es,it
-TUTORIAL,Tutorial,Tutorial,Tutorial,Tutorial
-TUT_TASK_MOVE,Move with {move_keys},Bewege dich mit {move_keys},Muevete con {move_keys},Muoviti con {move_keys}
-TUT_TASK_TAKE_BOX,Pickup the box with {grab_key},Nimm die Kiste mit {grab_key},Recoje la caja con {grab_key},Raccogli la scatola con {grab_key}
-TUT_TASK_ROT_BOX,Rotate the box with {rotate_key},Drehe die Kiste mit {rotate_key},Gira la caja con {rotate_key},Ruota la scatola con {rotate_keys}
-TUT_TASK_DROP_BOX,Carry the box into the truck and drop it using {grab_key},Trage die Kiste in den LKW und lege sie mit {grab_key} ab,Carga la caja al camión y suéltala usando {grab_key},Trasporta la scatola sul camion e lasciala con {grab_key}
-TUT_TASK_CLOSE_TRUCK,Get out of the truck and close it using {interact_key},Verlasse den LKW und schließe ihn mit {interact_key},Sal del camión y cierralo usando {interact_key},Esci dal camion e chiudilo con {interact_key}
-TUT_TASK_LEAVE,Leave the building,Verlasse das Gebäude,Sal del edificio,Lascia l'edificio
-TUT_INFO_FIRST_BOX,Looks like we've got our first box of the day!,"Sieht so aus, als hätten wir unsere erste Kiste des Tages!",Parece que tenemos nuestra primera caja del día!,Sembra che abbiamo ricevuto la prima scatola del giorno!
-TUT_INFO_SORT,We need to sort everything and load it into the correct truck.,Wir müssen alles sortieren und in den richtigen LKW laden.,Necesitamos organizar todo y cargarlo en el camión correcto.,Dobbiamo sistemare tutto e caricarlo sul camion corretto
-TUT_INFO_GG,Absolutely phenomenal work! You crushed it!\n**thumbs up** **creepy smile lingers just a bit too long**,Absolut phänomenale Arbeit! Du hast es gerockt!\n**Daumen hoch** **grusliges Grinsen (hält etwas zu lange an)**,Trabajo fenomenal! Lo lograste!\n**thumbs up** **la sonrisa horripilante persiste demasiado tiempo**,Un lavoro assolutamente fenomenale! Hai fatto centro! **Pollice in su** **Il sorriso dura un pò troppo a lungo: un pò inquietante**
-TUT_INFO_END,"Best employee yet. Let’s call this training done.\nSee you tomorrow for your first shift. It will be just as easy as today.\n**deadpan stare, unblinking**",Bester Mitarbeiter bisher. Lass uns das Training für beendet erklären.\nWir sehen uns morgen zu deiner ersten Schicht. Es wird genauso einfach wie heute.\n**leerer Blick**,"El mejor trabajador hasta ahora. Vamos a dejar el entrenamiento ahí.\nTe veo mañana en tu primer turno. Va a hacer fácil igual que hoy.\n**mirada inexpresiva, sin pestañear**","Il miglior dipendente della storia! Direi che la tua formazione è completata. Ci vediamo domani per il tuo primo turno.sarà facile come oggi. **Sguardo impassibile, senza batter ciglio""."
-JOY_AXIS_LEFT,Left Stick,,Stick Izquierdo,Levetta sinistra
-JOY_AXIS_RIGHT,Right Stick,,Stick Derecho,Levetta destra
-AXIS,Axis,,Eje,Asse
-JOY_AXIS_TRIGGER_LEFT,Left Trigger,,Gatillo Izquierdo,Grilletto sinistro
-JOY_AXIS_TRIGGER_RIGHT,Right Trigger,,Gatillo Derecho,Grilletto destro
-BUTTON,Button,,Botón,Tasto
-MOUSE_BUTTON_LEFT,Left Mouse Button,,Botón del Mouse Izquierdo,Tasto sinistro del mouse
-MOUSE_BUTTON_MIDDLE,Middle Mouse Button,,Botón del Mouse Medio,Tasto centrale del mouse
-MOUSE_BUTTON_RIGHT,Right Mouse Button,,Botón del Mouse Derecho,Tasto destro del mouse {interact_key}
-JOY_BUTTON_RIGHT_SHOULDER,Right Shoulder Button,,Botón del hombro Derecho,Tasto laterale destro {interact_key}
-JOY_BUTTON_LEFT_SHOULDER,Left Shoulder Button,,Botón del hombro Izquierdo,Tasto laterale sinistro {interact_key}
-OPEN_WITH,open with {interact_key},Öffnen mit {interact_key},,Apri con {interact_key}
-CLOSE_WITH,close with {interact_key},Schließen mit {interact_key},,Chiudi con {interact_key}
-LEAVE_WITH,leave with {interact_key},Verlassen mit {interact_key},,Lascia con {interact_key}
-PLAY_TUTORIAL,Play Tutorial,Tutorial Starten,,
-START_NEW_GAME,Start New Game,Neues Spiel Starten,,
-SETTINGS,Settings,Einstellungen,,
-CREDITS,Credits,Credits,,
-QUIT_GAME,Quit Game,Spiel Beenden,,
-BACK_TO_GAME,Continue,Weiter,,
+key,en,de,es,it,ru,ko,jp
+TUTORIAL,Tutorial,Tutorial,Tutorial,Tutorial,Обучение,튜토리얼,Tutorial
+TUT_TASK_MOVE,Move with {move_keys},Bewege dich mit {move_keys},Muevete con {move_keys},Muoviti con {move_keys},Перемещайтесь с помощью {move_keys},{move_keys} 키로 이동,Move with {move_keys}
+TUT_TASK_TAKE_BOX,Pickup the box with {grab_key},Nimm die Kiste mit {grab_key},Recoje la caja con {grab_key},Raccogli la scatola con {grab_key},Возьмите коробку с помощью {grab_key},{grab_key} 키로 상자 들기,Pickup the box with {grab_key}
+TUT_TASK_ROT_BOX,Rotate the box with {rotate_key},Drehe die Kiste mit {rotate_key},Gira la caja con {rotate_key},Ruota la scatola con {rotate_keys},Поворачивайте коробку с помощью {rotate_keys},{rotate_key} 키로 상자 돌리기,Rotate the box with {rotate_key}
+TUT_TASK_DROP_BOX,Carry the box into the truck and drop it using {grab_key},Trage die Kiste in den LKW und lege sie mit {grab_key} ab,Carga la caja al camión y suéltala usando {grab_key},Trasporta la scatola sul camion e lasciala con {grab_key},Перенесите коробку в грузовик и оставьте ее там с помощью {interact_key},상자를 트럭까지 가져가 {grab_key}키로 놓기,Carry the box into the truck and drop it using {grab_key}
+TUT_TASK_CLOSE_TRUCK,Get out of the truck and close it using {interact_key},Verlasse den LKW und schließe ihn mit {interact_key},Sal del camión y cierralo usando {interact_key},Esci dal camion e chiudilo con {interact_key},Выйдите из грузовика и закройте его с помощью {interact_key},트럭에서 나와 {interact_key} 키로 닫기,Get out of the truck and close it using {interact_key}
+TUT_TASK_LEAVE,Leave the building,Verlasse das Gebäude,Sal del edificio,Lascia l'edificio,Покиньте здание,건물 떠나기,Leave the building
+TUT_INFO_FIRST_BOX,Looks like we've got our first box of the day!,"Sieht so aus, als hätten wir unsere erste Kiste des Tages!",Parece que tenemos nuestra primera caja del día!,Sembra che abbiamo ricevuto la prima scatola del giorno!,"Похоже, ",Looks like we've got our first box of the day!,Looks like we've got our first box of the day!
+TUT_INFO_SORT,We need to sort everything and load it into the correct truck.,Wir müssen alles sortieren und in den richtigen LKW laden.,Necesitamos organizar todo y cargarlo en el camión correcto.,Dobbiamo sistemare tutto e caricarlo sul camion corretto,Нам нужно все отсортировать и загрузить нужный грузовик,We need to sort everything and load it into the correct truck.,We need to sort everything and load it into the correct truck.
+TUT_INFO_GG,Absolutely phenomenal work! You crushed it!\n**thumbs up** **creepy smile lingers just a bit too long**,Absolut phänomenale Arbeit! Du hast es gerockt!\n**Daumen hoch** **grusliges Grinsen (hält etwas zu lange an)**,Trabajo fenomenal! Lo lograste!\n**thumbs up** **la sonrisa horripilante persiste demasiado tiempo**,Un lavoro assolutamente fenomenale! Hai fatto centro! **Pollice in su** **Il sorriso dura un pò troppo a lungo: un pò inquietante**,,Absolutely phenomenal work! You crushed it!\n**thumbs up** **creepy smile lingers just a bit too long**,Absolutely phenomenal work! You crushed it!\n**thumbs up** **creepy smile lingers just a bit too long**
+TUT_INFO_END,"Best employee yet. Let’s call this training done.\nSee you tomorrow for your first shift. It will be just as easy as today.\n**deadpan stare, unblinking**",Bester Mitarbeiter bisher. Lass uns das Training für beendet erklären.\nWir sehen uns morgen zu deiner ersten Schicht. Es wird genauso einfach wie heute.\n**leerer Blick**,"El mejor trabajador hasta ahora. Vamos a dejar el entrenamiento ahí.\nTe veo mañana en tu primer turno. Va a hacer fácil igual que hoy.\n**mirada inexpresiva, sin pestañear**","Il miglior dipendente della storia! Direi che la tua formazione è completata. Ci vediamo domani per il tuo primo turno.sarà facile come oggi. **Sguardo impassibile, senza batter ciglio"".",,"Best employee yet. Let’s call this training done.\nSee you tomorrow for your first shift. It will be just as easy as today.\n**deadpan stare, unblinking**","Best employee yet. Let’s call this training done.\nSee you tomorrow for your first shift. It will be just as easy as today.\n**deadpan stare, unblinking**"
+JOY_AXIS_LEFT,Left Stick,,Stick Izquierdo,Levetta sinistra,,Left Stick,Left Stick
+JOY_AXIS_RIGHT,Right Stick,,Stick Derecho,Levetta destra,,Right Stick,Right Stick
+AXIS,Axis,,Eje,Asse,,Axis,Axis
+JOY_AXIS_TRIGGER_LEFT,Left Trigger,,Gatillo Izquierdo,Grilletto sinistro,,Left Trigger,Left Trigger
+JOY_AXIS_TRIGGER_RIGHT,Right Trigger,,Gatillo Derecho,Grilletto destro,,Right Trigger,Right Trigger
+BUTTON,Button,,Botón,Tasto,Кнопка,Button,Button
+MOUSE_BUTTON_LEFT,Left Mouse Button,,Botón del Mouse Izquierdo,Tasto sinistro del mouse,Левая кнопка мыши,Left Mouse Button,Left Mouse Button
+MOUSE_BUTTON_MIDDLE,Middle Mouse Button,,Botón del Mouse Medio,Tasto centrale del mouse,,Middle Mouse Button,Middle Mouse Button
+MOUSE_BUTTON_RIGHT,Right Mouse Button,,Botón del Mouse Derecho,Tasto destro del mouse {interact_key},Правая кнопка мыши,Right Mouse Button,Right Mouse Button
+JOY_BUTTON_RIGHT_SHOULDER,Right Shoulder Button,,Botón del hombro Derecho,Tasto laterale destro {interact_key},,Right Shoulder Button,Right Shoulder Button
+JOY_BUTTON_LEFT_SHOULDER,Left Shoulder Button,,Botón del hombro Izquierdo,Tasto laterale sinistro {interact_key},,Left Shoulder Button,Left Shoulder Button
+OPEN_WITH,open with {interact_key},Öffnen mit {interact_key},,Apri con {interact_key},,open with {interact_key},open with {interact_key}
+CLOSE_WITH,close with {interact_key},Schließen mit {interact_key},,Chiudi con {interact_key},,close with {interact_key},close with {interact_key}
+LEAVE_WITH,leave with {interact_key},Verlassen mit {interact_key},,Lascia con {interact_key},,leave with {interact_key},leave with {interact_key}
+PLAY_TUTORIAL,Play Tutorial,Tutorial Starten,,Gioca al tutorial, ,Play Tutorial,Play Tutorial
+START_NEW_GAME,Start New Game,Neues Spiel Starten,,Inizia un nuovo gioco,Начать новую игру,Start New Game,Start New Game
+SETTINGS,Settings,Einstellungen,,Impostazioni,Настройки,Settings,Settings
+CREDITS,Credits,Credits,,Crediti,Титры,Credits,Credits
+QUIT_GAME,Quit Game,Spiel Beenden,,Abbandona il gioco,Выйти из игры,Quit Game,Quit Game
+BACK_TO_GAME,Continue,Weiter,,Continua,Продолжить,Continue,Continue

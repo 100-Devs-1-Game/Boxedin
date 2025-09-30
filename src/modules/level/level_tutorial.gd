@@ -9,6 +9,7 @@ const STEP_LEAVE := 6
 @onready var employee: Employee = %Employee
 @onready var hud: Hud = $Hud
 @onready var box_spawner: BoxSpawner = $Map/BoxSpawner
+@onready var game_manager: GameManager
 
 var _items_in_truck := 0
 var last_step_timer: SceneTreeTimer
@@ -20,6 +21,7 @@ var _current_step := STEP_MOVE:
 		_redraw_tasks()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	game_manager = get_node("/root/Main") as GameManager
 	_redraw_tasks()
 	employee.item_picked_up.connect(_on_item_picked_up)
 	employee.item_rotation_status_changed.connect(_on_item_rotation_status_changed)
@@ -57,7 +59,7 @@ func _get_move_keys() -> String:
 		move_keys = Keys.get_action_key("move_forward")+Keys.get_action_key("move_left")+Keys.get_action_key("move_back")+Keys.get_action_key("move_right")
 	return move_keys
 func _strike(text: String) -> String:
-	return _s_font + text + "[/font]"
+	return _s_font + "[s]" + text + "[/s]" + "[/font]"
 	
 func _redraw_tasks() -> void:
 	hud.task_panel.title = tr("TUTORIAL")
@@ -140,4 +142,6 @@ func _last_step_in(delay: float):
 
 func _on_exit_triggered() -> void:
 	if _current_step == STEP_LEAVE:
+		if game_manager:
+			game_manager.start_level("main_menu")
 		self.queue_free()

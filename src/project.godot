@@ -143,7 +143,7 @@ debug_3={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://assets/lang/localization.de.translation", "res://assets/lang/localization.en.translation", "res://assets/lang/localization.es.translation", "res://assets/lang/localization.it.translation")
+locale/translations=PackedStringArray("res://assets/lang/localization.de.translation", "res://assets/lang/localization.en.translation", "res://assets/lang/localization.es.translation", "res://assets/lang/localization.it.translation", "res://assets/lang/localization.jp.translation", "res://assets/lang/localization.ko.translation", "res://assets/lang/localization.ru.translation")
 
 [layer_names]
 
@@ -152,8 +152,3 @@ locale/translations=PackedStringArray("res://assets/lang/localization.de.transla
 [physics]
 
 3d/physics_engine="Jolt Physics"
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

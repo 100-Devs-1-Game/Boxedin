@@ -1,19 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhehcyh3pvwcy"]
+[gd_scene load_steps=14 format=3 uid="uid://dhehcyh3pvwcy"]
 
 [ext_resource type="Script" uid="uid://otjqbusnts3v" path="res://modules/level/level_tutorial.gd" id="1_7rq0e"]
 [ext_resource type="PackedScene" uid="uid://dvcdor4ehvi8w" path="res://modules/ui/hud/hud.tscn" id="2_is5gb"]
 [ext_resource type="PackedScene" uid="uid://bp23ac0lihbo5" path="res://modules/employee/employee.tscn" id="4_87mv8"]
 [ext_resource type="PackedScene" uid="uid://dafqchdb8f6q2" path="res://modules/box_spawner/box_spawner.tscn" id="5_87mv8"]
+[ext_resource type="PackedScene" uid="uid://cds34ltio6nj" path="res://modules/light/ceiling_light.tscn" id="5_emawt"]
 [ext_resource type="PackedScene" uid="uid://bgpxig4b2r64x" path="res://modules/truck_door/truck.tscn" id="6_o2hum"]
+[ext_resource type="PackedScene" uid="uid://k6b5doynyu56" path="res://modules/gate/gate.tscn" id="7_emawt"]
 [ext_resource type="PackedScene" uid="uid://crbngawdbw0we" path="res://modules/exit_door/exit_door.tscn" id="7_xm0ht"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2hum"]
 diffuse_mode = 3
 albedo_color = Color(0.178126, 0.137123, 0.0395196, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5p0s"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xm0ht"]
 diffuse_mode = 3
-albedo_color = Color(0.933233, 0.826151, 0.589932, 1)
+albedo_color = Color(0.178126, 0.137123, 0.0395196, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5p0s"]
+shading_mode = 2
+diffuse_mode = 1
+albedo_color = Color(0.564706, 0.564706, 0.564706, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o2hum"]
 size = Vector3(2.10352, 2.94482, 3.09473)
@@ -33,13 +40,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.84361)
 [node name="Map" type="Node" parent="."]
 
 [node name="Floor" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53967, -2.5, 0)
 use_collision = true
 size = Vector3(30, 5, 40)
 material = SubResource("StandardMaterial3D_o2hum")
 
+[node name="Ceiling" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54, 4.36, -8.06375)
+use_collision = true
+size = Vector3(30, 0.719849, 14.3271)
+material = SubResource("StandardMaterial3D_xm0ht")
+
+[node name="Ceiling2" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54, 4.36, 8.33666)
+use_collision = true
+size = Vector3(30, 0.719849, 14.877)
+material = SubResource("StandardMaterial3D_xm0ht")
+
+[node name="Ceiling3" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.7101, 4.36, 0.143183)
+use_collision = true
+size = Vector3(17.6402, 0.719849, 12.6399)
+material = SubResource("StandardMaterial3D_xm0ht")
+
+[node name="Ceiling4" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.43352, 4.36, 0.143183)
+use_collision = true
+size = Vector3(17.0686, 0.719849, 12.6399)
+material = SubResource("StandardMaterial3D_xm0ht")
+
 [node name="Wall1" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02858, 1.5, 9.08419)
 use_collision = true
 size = Vector3(30, 5, 1)
 material = SubResource("StandardMaterial3D_g5p0s")
@@ -51,19 +82,25 @@ size = Vector3(13.479, 5, 1)
 material = SubResource("StandardMaterial3D_g5p0s")
 
 [node name="Wall5" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.27656, 1.5, -8.69798)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.69642, 1.5, -8.69798)
 use_collision = true
-size = Vector3(13.479, 5, 1)
+size = Vector3(16.3187, 5, 1)
+material = SubResource("StandardMaterial3D_g5p0s")
+
+[node name="Wall6" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111547, 3.73395, -8.69798)
+use_collision = true
+size = Vector3(16.3187, 0.532104, 1)
 material = SubResource("StandardMaterial3D_g5p0s")
 
 [node name="Wall3" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8802, 1.5, 0)
 use_collision = true
 size = Vector3(1, 5, 40)
 material = SubResource("StandardMaterial3D_g5p0s")
 
 [node name="Wall4" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6947, 1.5, 0)
 use_collision = true
 size = Vector3(1, 5, 40)
 material = SubResource("StandardMaterial3D_g5p0s")
@@ -82,11 +119,54 @@ spot_angle = 13.67
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Map"]
 transform = Transform3D(0.840567, 0.452764, -0.29741, 0, -0.549023, -0.835807, -0.541708, 0.702552, -0.46149, 80.5716, 49.1191, 0)
+visible = false
 light_energy = 0.5
 sky_mode = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
 transform = Transform3D(0.840935, -0.452405, 0.296914, 0, 0.548687, 0.836028, -0.541136, -0.703045, 0.46141, 80.5716, 49.1191, 0)
+visible = false
+
+[node name="row1" type="Node3D" parent="Map"]
+
+[node name="CeilingLight" parent="Map/row1" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.94911, -3.67711)
+
+[node name="CeilingLight5" parent="Map/row1" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5, 3.949, -3.677)
+
+[node name="CeilingLight6" parent="Map/row1" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10, 3.949, -3.677)
+
+[node name="CeilingLight2" parent="Map/row1" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5, 3.949, -3.677)
+
+[node name="CeilingLight3" parent="Map/row1" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 10, 3.949, -3.677)
+
+[node name="CeilingLight4" parent="Map/row1" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15, 3.949, -3.677)
+
+[node name="row2" type="Node3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.44506)
+
+[node name="CeilingLight" parent="Map/row2" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.94911, -3.67711)
+
+[node name="CeilingLight5" parent="Map/row2" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5, 3.949, -3.677)
+
+[node name="CeilingLight6" parent="Map/row2" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10, 3.949, -3.677)
+
+[node name="CeilingLight2" parent="Map/row2" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5, 3.949, -3.677)
+
+[node name="CeilingLight3" parent="Map/row2" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 10, 3.949, -3.677)
+
+[node name="CeilingLight4" parent="Map/row2" instance=ExtResource("5_emawt")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15, 3.949, -3.677)
 
 [node name="truck" parent="." instance=ExtResource("6_o2hum")]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0.0810229, -8.32273)
@@ -102,10 +182,27 @@ shape = SubResource("BoxShape3D_o2hum")
 debug_color = Color(0.940128, 9.91493e-06, 0.616364, 0.42)
 
 [node name="Door" parent="." instance=ExtResource("7_xm0ht")]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, -7.00274, 0.05, -8.15195)
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, -9.77779, 0.05, -8.15195)
 
 [node name="UI" parent="Door/Interactable" index="1"]
 texture = SubResource("ViewportTexture_xm0ht")
+
+[node name="Gate" parent="." instance=ExtResource("7_emawt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.00734359, -7.15256e-07, -8.19535)
+red = false
+green = true
+
+[node name="Gate2" parent="." instance=ExtResource("7_emawt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.23051, -7.15256e-07, -8.19535)
+is_blinking = true
+
+[node name="Gate3" parent="." instance=ExtResource("7_emawt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.398, -7.15256e-07, -8.19535)
+is_blinking = true
+
+[node name="Gate4" parent="." instance=ExtResource("7_emawt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.16627, -7.15256e-07, -8.19535)
+is_blinking = true
 
 [connection signal="animation_finished" from="truck/TruckDoor/AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="TruckArea3D" to="." method="_on_truck_area_3d_body_entered"]

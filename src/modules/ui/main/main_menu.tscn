@@ -450,6 +450,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ukq8h")
 
+[connection signal="visibility_changed" from="Box/Paper/Label/VBox/Top/HBoxContainer/Address/RandomLable" to="Box/Paper/Label/VBox/Top/HBoxContainer/Address/RandomLable" method="_on_visibility_changed"]
 [connection signal="pressed" from="Box/Paper/Label/VBox/Center/VBox/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Box/Paper/Label/VBox/Center/VBox/PlayTutorial" to="." method="_on_play_tutorial_pressed"]
 [connection signal="pressed" from="Box/Paper/Label/VBox/Center/VBox/Play" to="." method="_on_play_pressed"]

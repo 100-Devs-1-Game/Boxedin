@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cds34ltio6nj"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_pvigl"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.0
+
+[node name="CeilingLight" type="SpotLight3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_energy = 4.285
+light_volumetric_fog_energy = 0.5
+light_size = 1.0
+spot_range = 14.883
+spot_angle = 48.39
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.77156e-16, 0.0357666)
+size = Vector3(0.5, 1, 0.025)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.90112e-10, 0.0219957)
+size = Vector3(0.476807, 0.972412, 0.0153076)
+material = SubResource("ORMMaterial3D_pvigl")
